@@ -8,6 +8,7 @@ import bs4 as bs
 import urllib.request
 import pickle
 import requests
+import os
 
 # Load the NLP model and TF-IDF vectorizer from disk
 filename = 'nlp_model.pkl'
