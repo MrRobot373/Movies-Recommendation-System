@@ -16,5 +16,3 @@ urllib3
 requests==2.23.0
 pickleshare==0.7.5
 wheel
-wheel lxml
-install lxml-*.whl
