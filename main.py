@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -146,6 +146,10 @@ def recommend():
     return render_template('recommend.html', title=title, poster=poster, overview=overview, vote_average=vote_average,
                            vote_count=vote_count, release_date=release_date, runtime=runtime, status=status, genres=genres,
                            movie_cards=movie_cards, casts=casts, cast_details=cast_details)
+
+@app.route('/meta.json')
+def meta():
+    return send_from_directory(directory='.', filename='meta.json')
 
 if __name__ == '__main__':
     app.run(debug=True)
