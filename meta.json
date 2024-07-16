@@ -1,0 +1,21 @@
+{
+  "name": "Movie Recommendation System",
+  "description": "A web application that provides movie recommendations based on user input.",
+  "version": "1.0.0",
+  "author": "Yash Manoj Badgujar",
+  "dependencies": {
+    "flask": ">=2.0.0",
+    "numpy": ">=1.19.0",
+    "pandas": ">=1.1.0",
+    "scikit-learn": ">=0.23.0",
+    "beautifulsoup4": ">=4.9.0",
+    "requests": ">=2.24.0"
+  },
+  "scripts": {
+    "start": "python main.py"
+  },
+  "config": {
+    "port": 5000,
+    "debug": true
+  }
+}
