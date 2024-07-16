@@ -148,5 +148,4 @@ def recommend():
                            movie_cards=movie_cards, casts=casts, cast_details=cast_details)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
