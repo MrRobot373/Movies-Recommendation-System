@@ -17,47 +17,44 @@
 
   <!-- Auto Complete -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
-  <script type="text/javascript">
-    var films = {{suggestions|tojson}};
-  </script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
+  <script type="text/javascript">
+    var films = {{ suggestions|tojson }};
+  </script>
 </head>
 
 <body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
-
-	
-    <center><h1>&#127909; Movie Recommendation System &#127916;</h1></center>
-    <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
-        <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Movie Name/Title" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
-        <br>
-    </div>
-
-    <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" disabled="true" >Explore</button><br><br>
-    </div>
-	</div>
-
-  <div id="loader" class="text-center">
+  <center><h1>&#127909; Movie Recommendation System &#127916;</h1></center>
+  <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
+    <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Movie Name/Title" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
+    <br>
   </div>
-  
+
+  <div class="form-group" style="text-align: center;">
+    <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" disabled="true">Explore</button><br><br>
+  </div>
+
+  <div id="loader" class="text-center"></div>
+
   <div class="fail">
-    <center><h3>&#128683; Sorry! try another movie name/title &#128683; </h3></center>
+    <center><h3>&#128683; Sorry! Try another movie name/title &#128683; </h3></center>
   </div>
 
-	<div class="results">
+  <div class="results">
     <center>
       <h2 id="name" class="text-uppercase"></h2>
     </center>
-	</div>
-	
-	<div class="footer">Made by Yash Badgujar &#129302;</div>
-	
-	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+  </div>
 
+  <div class="footer">Made by Yash Badgujar &#129302;</div>
+
+  <!-- AutoComplete JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
-
+  <script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 </body>
 </html>
